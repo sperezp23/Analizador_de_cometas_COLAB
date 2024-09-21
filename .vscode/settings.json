@@ -3,6 +3,8 @@
         "conexion",
         "efemerides",
         "grafica",
+        "Graficas",
+        "lightcurve",
         "Lightcurve",
         "movil",
         "plotly",
