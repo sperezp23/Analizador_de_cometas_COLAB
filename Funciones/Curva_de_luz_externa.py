@@ -8,3 +8,6 @@ def curva_de_luz_externa(nombre_cometa, curva_de_luz_externa_df):
     fig.write_image(f'Graficas\\{titulo}.png')
     # fig.show()
     print('✅ Maxima curva de luz reducida creada.')
+
+if __name__ == '__main__':
+    curva_de_luz_externa()

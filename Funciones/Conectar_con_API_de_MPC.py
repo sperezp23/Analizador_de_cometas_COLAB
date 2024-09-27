@@ -7,3 +7,6 @@ def conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa):
 
     ephemeris = MPC.get_ephemeris(nombre_cometa, start = str(fecha_inicial), number = fechas) # type: ignore  
     return ephemeris
+
+if __name__ == '__main__':
+    conectar_con_API_de_MPC()

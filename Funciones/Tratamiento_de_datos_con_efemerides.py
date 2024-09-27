@@ -21,3 +21,6 @@ def tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, ephemeris):
         )
     
     return curva_de_luz_procesada_df
+
+if __name__ == '__main__':
+    tratamiento_de_datos_con_efemerides()

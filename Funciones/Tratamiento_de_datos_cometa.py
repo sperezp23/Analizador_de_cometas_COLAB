@@ -10,3 +10,6 @@ def tratamiento_de_datos_cometa(content):
     curva_de_luz_cruda_df = cometa_df[['obs_method_key', 'obs_date', 'magnitude']].copy()
 
     return curva_de_luz_cruda_df
+
+if __name__ == '__main__':
+    tratamiento_de_datos_cometa()
