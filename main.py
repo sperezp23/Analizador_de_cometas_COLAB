@@ -11,7 +11,8 @@ opciones = '123'
 texto_opciones = f'''{'-'*40}\nElija una de las siguientes opciones:
 [1] : Buscar un comenta.
 [2] : Graficar curvas de luz.
-[3] : Finalizar programa.\n'''
+[3] : Finalizar programa.\n
+Ingrese aquí su elección: '''
 
 # %% Verificar la conexión a internet.
 conectado_a_internet = verificar_conexion()
@@ -28,12 +29,12 @@ while (conectado_a_internet) and ( not(Terminar)):
 
     # Buscar cometa
     if opcion_elegida == '1':
-        cometa_buscado = input('\nIngrese el nombre del cometa que desea buscar:\n')
+        cometa_buscado = input('\nIngrese el nombre del cometa que desea buscar: ')
         buscar_cometa(cometa_buscado, conectado_a_internet)
     
     # Graficar curvas de luz 
     elif opcion_elegida == '2':
-        nombre_cometa = input('\nIngrese el nombre del cometa:\n') #'C/2023 A3'
+        nombre_cometa = input('\nIngrese el nombre del cometa que desea graficar: ') #'C/2023 A3'
 
         if verificar_cometa(nombre_cometa, conectado_a_internet):
             envolvente(nombre_cometa, conectado_a_internet)

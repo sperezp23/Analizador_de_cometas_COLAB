@@ -13,7 +13,7 @@ def conectar_con_API_de_COBS_Observaciones(nombre_cometa, conectado_a_internet):
 
         if response.status_code == 200:
             content = response.json()
-            print('✅ Base de datos actualizada (COBS Observaciones).')
+            print('✅ Base de datos actualizada [COBS Observaciones].')
             return content
 
         else:

@@ -28,13 +28,13 @@ def envolvente(nombre_cometa, conectado_a_internet):
     # Curva de luz cruda.
     curva_de_luz_cruda(nombre_cometa, curva_de_luz_cruda_df)
 
-    # # Curva de luz reducida
+    # Curva de luz reducida
     curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df)
 
-    # # Curva de luz reducida
+    # Curva de luz reducida
     curva_de_luz_externa(nombre_cometa, curva_de_luz_externa_df)
 
-    # # Gráfica de luz promediada
+    # Gráfica de luz promediada
     curva_de_luz_externa_promediada(nombre_cometa, curva_de_luz_externa_df)
 
 if __name__ == '__main__':
