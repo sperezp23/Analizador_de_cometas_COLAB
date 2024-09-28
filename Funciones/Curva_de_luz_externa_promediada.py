@@ -7,6 +7,10 @@ def curva_de_luz_externa_promediada(nombre_cometa, curva_de_luz_externa_df):
     titulo = f'Averaged external lightcurve of {nombre_cometa}'
 
     carpeta_cometa = Path('Graficas', nombre_cometa.replace('/', '_'))
+
+    if not os.path.exists('Graficas'):
+        Path.mkdir('Graficas')
+
     ruta_archivos_graficas = f'{carpeta_cometa}/{titulo.replace('/', '_')}.png'
 
     if not os.path.exists(carpeta_cometa):
