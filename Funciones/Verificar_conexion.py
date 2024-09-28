@@ -3,8 +3,7 @@ import requests
 def verificar_conexion():
     try:
         requests.get("http://www.google.com", timeout=5)
-        print('✅ Conectado a internet.')
-        print('✅ Conectando con la base de datos.')
+        print(f'{'\n'*2}✅ Conectado a internet.')
         return True
     
     except requests.ConnectionError:

@@ -5,8 +5,8 @@ def curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df):
     titulo = f'Reduced lightcurve of {nombre_cometa}'
     fig = px.scatter(curva_de_luz_procesada_df, x='obs_date', y='magnitud_reducida', color='obs_method_key', template= 'plotly_dark', labels= labels, title= titulo)
     fig.update_yaxes(autorange="reversed")
-    fig.write_image(f'Graficas\\{titulo}.png')
-    # fig.show()
+    # fig.write_image(f'Graficas\\{titulo}.png')
+    fig.show()
     print('✅ Curva de luz reducida creada.')
 
     if __name__ == '__main__':
