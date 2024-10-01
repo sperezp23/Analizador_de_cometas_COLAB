@@ -20,6 +20,7 @@ def curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df):
     fig.update_yaxes(autorange="reversed")
     fig.write_image(ruta_archivos_graficas)
     # fig.show()
+    
     print('✅ Creada: curva de luz reducida creada.')
 
     if __name__ == '__main__':

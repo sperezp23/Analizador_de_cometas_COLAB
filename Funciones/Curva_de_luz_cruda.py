@@ -20,6 +20,7 @@ def curva_de_luz_cruda(nombre_cometa,curva_de_luz_cruda_df):
     fig.update_yaxes(autorange="reversed")
     fig.write_image(ruta_archivos_graficas)
     # fig.show()
+    
     print('✅ Creada: curva de luz cruda creada.')
 
     if __name__ == '__main__':
