@@ -5,11 +5,11 @@ from Funciones.Curva_de_luz_cruda import curva_de_luz_cruda
 from Funciones.Conectar_con_API_de_MPC import conectar_con_API_de_MPC
 from Funciones.Tratamiento_de_datos_con_efemerides import tratamiento_de_datos_con_efemerides
 from Funciones.Curva_de_luz_reducida import curva_de_luz_reducida
-from Funciones.Promedio_movil import promedio_movil
+from Funciones.Promedio_movil_maximo import promedio_movil_maximo
 from Funciones.Curva_de_luz_externa import curva_de_luz_externa
 from Funciones.Curva_de_luz_externa_promediada import curva_de_luz_externa_promediada
 
-def envolvente(nombre_cometa, conectado_a_internet):
+def envolvente_superior(nombre_cometa, conectado_a_internet):
     # Conexión con la API de COBS
     content = conectar_con_API_de_COBS_Observaciones(nombre_cometa, conectado_a_internet)
 
@@ -23,19 +23,19 @@ def envolvente(nombre_cometa, conectado_a_internet):
     curva_de_luz_procesada_df = tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, ephemeris)
 
     # Promedio movil
-    curva_de_luz_externa_df = promedio_movil(curva_de_luz_procesada_df)
+    curva_de_luz_externa_df = promedio_movil_maximo(curva_de_luz_procesada_df)
     
     # Curva de luz cruda.
-    curva_de_luz_cruda(nombre_cometa, curva_de_luz_cruda_df)
+    curva_de_luz_cruda(nombre_cometa, curva_de_luz_cruda_df, 'Envolvente_Superior')
 
     # Curva de luz reducida
-    curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df)
+    curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df, 'Envolvente_Superior')
 
-    # Curva de luz reducida
-    curva_de_luz_externa(nombre_cometa, curva_de_luz_externa_df)
+    # Curva de luz maxima
+    curva_de_luz_externa(nombre_cometa, curva_de_luz_externa_df, 'Envolvente_Superior')
 
     # Gráfica de luz promediada
-    curva_de_luz_externa_promediada(nombre_cometa, curva_de_luz_externa_df)
+    curva_de_luz_externa_promediada(nombre_cometa, curva_de_luz_externa_df, 'Envolvente_Superior')
 
 if __name__ == '__main__':
-    envolvente()
+    envolvente_superior()
