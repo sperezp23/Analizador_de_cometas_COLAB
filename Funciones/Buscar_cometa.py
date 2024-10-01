@@ -17,7 +17,7 @@ def buscar_cometa(cometa_buscado, conectado_a_internet):
         return False
     
     else:
-        print(f'✅ Coincidencias halladas:\n{cometas_hallados}')
+        print(f'✅ Coincidencias halladas:{'\n'*2}{cometas_hallados}')
         return True
 
 if __name__ == '__main__':

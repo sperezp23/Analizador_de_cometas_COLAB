@@ -3,7 +3,7 @@ import requests
 def verificar_conexion():
     try:
         requests.get("http://www.google.com", timeout=5)
-        print(f'{'\n'*2}✅ Conectado a internet.')
+        print(f'{'\n'*2}✅ Conectado a internet.\n{'-'*40}')
         return True
     
     except requests.ConnectionError:

@@ -8,8 +8,8 @@ from Funciones.Verificar_cometa import verificar_cometa
 # %% Variables
 Terminar = False
 opcion_elegida = '-1'
-opciones = '123'
-texto_opciones = f'''{'-'*40}\nElija una de las siguientes opciones:
+opciones = '1234'
+texto_opciones = f'''Elija una de las siguientes opciones:
 [1] : Buscar un comenta.
 [2] : Graficar curvas de luz externas.
 [3] : Graficar curvas de luz internas.
@@ -32,7 +32,8 @@ while (conectado_a_internet) and ( not(Terminar)):
     # Buscar cometa
     if opcion_elegida == '1':
         cometa_buscado = input('\nIngrese el nombre del cometa que desea buscar: ')
-        buscar_cometa(cometa_buscado, conectado_a_internet)
+        if verificar_conexion():
+            buscar_cometa(cometa_buscado, conectado_a_internet)
     
     # Graficar curvas de luz externa 
     elif opcion_elegida == '2':
