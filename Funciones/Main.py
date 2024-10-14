@@ -37,10 +37,10 @@ Ingrese aquí su elección: '''
 
         # Buscar cometa
         if opcion_elegida == '1':
-            cometa_buscado = input('\nIngrese el nombre del cometa que desea buscar: ')
+            nombre_cometa = input('\nIngrese el nombre del cometa que desea buscar, o "volver_menu" para regresar: ')
 
             if nombre_cometa != 'volver_menu' and verificar_conexion():
-                buscar_cometa(cometa_buscado, conectado_a_internet)
+                buscar_cometa(nombre_cometa, conectado_a_internet)
         
         # Graficar curvas de luz externa 
         elif opcion_elegida == '2':
@@ -51,7 +51,7 @@ Ingrese aquí su elección: '''
 
         # Graficar curvas de luz interna
         elif opcion_elegida == '3':
-            nombre_cometa = input('\nIngrese el nombre del cometa que desea graficar: ') #'C/2023 A3'
+            nombre_cometa = input('\nIngrese el nombre del cometa que desea graficar, o "volver_menu" para regresar: ') #'C/2023 A3'
 
             if nombre_cometa != 'volver_menu' and verificar_cometa(nombre_cometa, conectado_a_internet):
                 envolvente_inferior(nombre_cometa, conectado_a_internet)
