@@ -6,12 +6,16 @@ from Funciones.Envolvente_inferior import envolvente_inferior
 from Funciones.Verificar_cometa import verificar_cometa
 
 # %% Main
-def main():
+def main() -> None:
+    '''
+    Realiza el llamado a los principales módulos del programa y controla la ejecución del mismo.
+    '''
+
     #  Variables
-    Terminar = False
-    opcion_elegida = '-1'
-    opciones = '1234'
-    texto_opciones = f'''Elija una de las siguientes opciones:
+    Terminar : bool = False
+    opcion_elegida: str = '-1'
+    opciones : str = '1234'
+    texto_opciones : str  = f'''Elija una de las siguientes opciones:
 [1] : Buscar un comenta.
 [2] : Graficar curvas de luz externas.
 [3] : Graficar curvas de luz internas.
@@ -53,6 +57,7 @@ Ingrese aquí su elección: '''
 
         # Finalizar programa
         elif opcion_elegida == '4':
+            print('\nPrograma finalizado')
             break
 
         # Resetear opción elegida

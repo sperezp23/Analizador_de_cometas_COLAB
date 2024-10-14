@@ -1,4 +1,6 @@
+# Librerías
 import requests
+
 
 def verificar_conexion():
     try:
