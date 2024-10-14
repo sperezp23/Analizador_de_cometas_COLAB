@@ -5,19 +5,18 @@ from Funciones.Envolvente_superior import envolvente_superior
 from Funciones.Envolvente_inferior import envolvente_inferior
 from Funciones.Verificar_cometa import verificar_cometa
 
-# %%  Variables
-Terminar = False
-opcion_elegida = '-1'
-opciones = '1234'
-texto_opciones = f'''Elija una de las siguientes opciones:
+# %% Main
+def main():
+    #  Variables
+    Terminar = False
+    opcion_elegida = '-1'
+    opciones = '1234'
+    texto_opciones = f'''Elija una de las siguientes opciones:
 [1] : Buscar un comenta.
 [2] : Graficar curvas de luz externas.
 [3] : Graficar curvas de luz internas.
 [4] : Finalizar programa.\n
 Ingrese aquí su elección: '''
-
-# %% Main
-def main():
     
     # Verificar la conexión a internet.
     conectado_a_internet = verificar_conexion()
