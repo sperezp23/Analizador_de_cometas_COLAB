@@ -14,12 +14,13 @@ def main() -> None:
     #  Variables
     Terminar : bool = False
     opcion_elegida: str = '-1'
-    opciones : str = '1234'
+    opciones : str = '12345'
     texto_opciones : str  = f'''Elija una de las siguientes opciones:
 [1] : Buscar un comenta.
-[2] : Graficar curvas de luz externas.
-[3] : Graficar curvas de luz internas.
-[4] : Finalizar programa.\n
+[2] : Graficar curvas de luz externas (Envolvente superior).
+[3] : Graficar curvas de luz internas (Envolvente inferior).
+[4] : Graficar curvas de luz externa e internas (Envolvente inferior e inferior).
+[5] : Finalizar programa.\n
 Ingrese aquí su elección: '''
     
     # Verificar la conexión a internet.
@@ -37,27 +38,35 @@ Ingrese aquí su elección: '''
 
         # Buscar cometa
         if opcion_elegida == '1':
-            nombre_cometa = input('\nIngrese el nombre del cometa que desea buscar, o "volver_menu" para regresar: ')
+            nombre_cometa = input('\nIngrese el nombre del cometa que desea buscar o, "volver_menu" para regresar: ')
 
             if nombre_cometa != 'volver_menu' and verificar_conexion():
                 buscar_cometa(nombre_cometa, conectado_a_internet)
         
         # Graficar curvas de luz externa 
         elif opcion_elegida == '2':
-            nombre_cometa = input('\nIngrese el nombre del cometa que desea graficar, o "volver_menu" para regresar: ') #'C/2023 A3'
+            nombre_cometa = input('\nIngrese el nombre del cometa que desea graficar o, "volver_menu" para regresar: ') #'C/2023 A3'
 
             if nombre_cometa != 'volver_menu' and verificar_cometa(nombre_cometa, conectado_a_internet):
                 envolvente_superior(nombre_cometa, conectado_a_internet)
 
         # Graficar curvas de luz interna
         elif opcion_elegida == '3':
-            nombre_cometa = input('\nIngrese el nombre del cometa que desea graficar, o "volver_menu" para regresar: ') #'C/2023 A3'
+            nombre_cometa = input('\nIngrese el nombre del cometa que desea graficar o, "volver_menu" para regresar: ') #'C/2023 A3'
 
             if nombre_cometa != 'volver_menu' and verificar_cometa(nombre_cometa, conectado_a_internet):
                 envolvente_inferior(nombre_cometa, conectado_a_internet)
 
-        # Finalizar programa
+        # Graficar ambas curvas de luz interna y externa
         elif opcion_elegida == '4':
+            nombre_cometa = input('\nIngrese el nombre del cometa que desea graficar o, "volver_menu" para regresar: ') #'C/2023 A3'
+
+            if nombre_cometa != 'volver_menu' and verificar_cometa(nombre_cometa, conectado_a_internet):
+                envolvente_superior(nombre_cometa, conectado_a_internet)
+                envolvente_inferior(nombre_cometa, conectado_a_internet)
+
+        # Finalizar programa
+        elif opcion_elegida == '5':
             print('\nPrograma finalizado por el usuario.')
             break
 
