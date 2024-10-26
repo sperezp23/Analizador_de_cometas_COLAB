@@ -1,4 +1,5 @@
 # Funciones  
+# from Conectar_con_API_de_COBS_Observaciones import conectar_con_API_de_COBS_Observaciones
 from Funciones.Conectar_con_API_de_COBS_Observaciones import conectar_con_API_de_COBS_Observaciones
 from Funciones.Tratamiento_de_datos_cometa import tratamiento_de_datos_cometa
 from Funciones.Curva_de_luz_cruda import curva_de_luz_cruda
