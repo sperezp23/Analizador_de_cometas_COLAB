@@ -1,7 +1,7 @@
-# %% Librerías
+# Librerías
 import requests
 
-# %% Función
+# Función
 def conectar_con_API_de_COBS_Lista_de_Cometas(conectado_a_internet: bool) -> object:
     '''
     Realiza la conexión con la API de COBS para generar la lista de nombres registrados. Retorna un objeto tipo Json.

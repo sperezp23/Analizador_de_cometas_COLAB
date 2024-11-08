@@ -1,7 +1,6 @@
 # Librerías
 import requests
 
-
 def verificar_conexion():
     try:
         requests.get("http://www.google.com", timeout=5)
