@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages
 
+with open('requirements.txt') as f:
+    required_packages = f.read().splitlines()
+
 setup(
     name='Analizador_de_cometas',  # Nombre del paquete
     version='1.0.0',            # Versión del paquete
@@ -16,9 +19,6 @@ setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',     # Versión mínima de Python requerida
-
-    with open('requirements.txt') as f:
-    required_packages = f.read().splitlines()
 
     install_requires= required_packages
 )
