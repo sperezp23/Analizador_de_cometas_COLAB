@@ -24,9 +24,11 @@ def envolvente_superior(nombre_cometa, conectado_a_internet):
 
     # Promedio movil
     curva_de_luz_externa_df = promedio_movil_maximo(curva_de_luz_procesada_df)
+
+    return curva_de_luz_cruda_df, curva_de_luz_procesada_df, curva_de_luz_externa_df
     
-    # Curva de luz cruda.
-    curva_de_luz_cruda(nombre_cometa, curva_de_luz_cruda_df, 'Envolvente_Superior')
+    # # Curva de luz cruda.
+    # curva_de_luz_cruda(nombre_cometa, curva_de_luz_cruda_df, 'Envolvente_Superior')
 
     # Curva de luz reducida
     # curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df, 'Envolvente_Superior')

@@ -1,5 +1,5 @@
 # %% Librerías
-from Funciones import main
+from Funciones.Main import main
 
 # %% Programa principal
 main()

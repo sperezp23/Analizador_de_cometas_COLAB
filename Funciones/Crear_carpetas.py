@@ -5,7 +5,7 @@ from datetime import date
 
 def crear_carpetas(nombre_cometa, titulo, tipo_de_grafica):
     fecha_actual = str(date.today())
-    carpeta_cometa = Path('/content/Analisador_de_cometas_COLAB/Graficas', nombre_cometa.replace('/', '_'))
+    carpeta_cometa = Path('Graficas', nombre_cometa.replace('/', '_'))
     carpeta_tipo_de_grafica = Path(carpeta_cometa, tipo_de_grafica)
     carpeta_fecha = Path(carpeta_tipo_de_grafica, fecha_actual)
 
