@@ -21,7 +21,8 @@ def crear_carpetas(nombre_cometa, titulo, tipo_de_grafica):
     if not os.path.exists(carpeta_fecha):
         Path.mkdir(carpeta_fecha)
 
-    return f'{carpeta_fecha}/{titulo.replace('/', '_')}__{fecha_actual}.png'
+    aux = titulo.replace('/', '_')
+    return f'{carpeta_fecha}/{aux}__{fecha_actual}.png'
 
 if __name__ == '__main__':
     crear_carpetas()
