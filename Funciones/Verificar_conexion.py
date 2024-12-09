@@ -5,7 +5,7 @@ def verificar_conexion():
     try:
         requests.get("http://www.google.com", timeout=5)
         aux = ('\n'*2, '-'*40)
-        print(f'{aux[1]}✅ Conectado a internet.\n{aux[1]}')
+        print(f'{aux[0]}✅ Conectado a internet.\n{aux[1]}')
         return True
     
     except requests.ConnectionError:
