@@ -20,7 +20,8 @@ def buscar_cometa(cometa_buscado: str, conectado_a_internet: bool) -> None:
         print(f'🛑 No hay coincidencias para: {cometa_buscado}, en la base de datos (COBS).')
     
     else:
-        print(f'✅ Coincidencias halladas:{'\n'*2}{cometas_hallados}')
+        aux = '\n'*2
+        print(f'✅ Coincidencias halladas:{aux}{cometas_hallados}')
 
 if __name__ == '__main__':
     buscar_cometa()
