@@ -29,13 +29,13 @@ def envolvente_superior(nombre_cometa, conectado_a_internet):
     curva_de_luz_cruda(nombre_cometa, curva_de_luz_cruda_df, 'Envolvente_Superior')
 
     # Curva de luz reducida
-    curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df, 'Envolvente_Superior')
+    # curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df, 'Envolvente_Superior')
 
     # Curva de luz maxima
-    curva_de_luz_externa(nombre_cometa, curva_de_luz_externa_df, 'Envolvente_Superior')
+    # curva_de_luz_externa(nombre_cometa, curva_de_luz_externa_df, 'Envolvente_Superior')
 
     # Gráfica de luz promediada
-    curva_de_luz_externa_promediada(nombre_cometa, curva_de_luz_externa_df, 'Envolvente_Superior')
+    # curva_de_luz_externa_promediada(nombre_cometa, curva_de_luz_externa_df, 'Envolvente_Superior')
 
 if __name__ == '__main__':
     envolvente_superior()
