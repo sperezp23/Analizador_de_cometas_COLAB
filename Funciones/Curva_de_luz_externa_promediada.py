@@ -15,8 +15,6 @@ def curva_de_luz_externa_promediada(nombre_cometa, curva_de_luz_externa_df):
     fig.update_yaxes(autorange="reversed")
     # fig.write_image(ruta_archivos_graficas)
     fig.show()
-    
-    print('✅ Creada: curva de luz promediada.')
 
 if __name__ == '__main__':
     curva_de_luz_externa_promediada()
