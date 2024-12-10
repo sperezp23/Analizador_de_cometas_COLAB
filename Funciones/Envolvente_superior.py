@@ -5,7 +5,15 @@ from Funciones.Conectar_con_API_de_MPC import conectar_con_API_de_MPC
 from Funciones.Tratamiento_de_datos_con_efemerides import tratamiento_de_datos_con_efemerides
 from Funciones.Promedio_movil_maximo import promedio_movil_maximo
 
-def envolvente_superior(nombre_cometa, conectado_a_internet):
+def envolvente_superior(nombre_cometa: str, conectado_a_internet: bool) -> tuple[object, object, object]:
+    '''
+    Procesa los datos del cometa especificado para calcular la 
+    envolvente inferior de la curva de luz del cometa especificado.
+    Retorna: 
+    [1] curva_de_luz_cruda_df,
+    [2] curva_de_luz_procesada_df, 
+    [3] curva_de_luz_externa_df.
+    '''
     # Conexión con la API de COBS
     content = conectar_con_API_de_COBS_Observaciones(nombre_cometa, conectado_a_internet)
 
