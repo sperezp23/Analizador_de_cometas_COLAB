@@ -9,7 +9,15 @@ from Funciones.Promedio_movil_minimo import promedio_movil_minimo
 from Funciones.Curva_de_luz_interna import curva_de_luz_interna
 from Funciones.Curva_de_luz_interna_promediada import curva_de_luz_interna_promediada
 
-def envolvente_inferior(nombre_cometa, conectado_a_internet):
+def envolvente_inferior(nombre_cometa: str, conectado_a_internet: bool) -> tuple[object, object, object]:
+    '''
+    Procesa los datos del cometa especificado para calcular la 
+    envolvente inferior de la curva de luz del cometa especificado.
+    Retorna: 
+    [1] curva_de_luz_cruda_df,
+    [2] curva_de_luz_procesada_df, 
+    [3] curva_de_luz_interna_df.
+    '''
     # Conexión con la API de COBS
     content = conectar_con_API_de_COBS_Observaciones(nombre_cometa, conectado_a_internet)
 
@@ -34,10 +42,10 @@ def envolvente_inferior(nombre_cometa, conectado_a_internet):
     # curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df, 'Envolvente_inferior')
 
     # # Curva de luz minima
-    curva_de_luz_interna(nombre_cometa, curva_de_luz_interna_df, 'Envolvente_inferior')
+    # curva_de_luz_interna(nombre_cometa, curva_de_luz_interna_df, 'Envolvente_inferior')
 
     # # Gráfica de luz promediada
-    curva_de_luz_interna_promediada(nombre_cometa, curva_de_luz_interna_df, 'Envolvente_inferior')
+    # curva_de_luz_interna_promediada(nombre_cometa, curva_de_luz_interna_df, 'Envolvente_inferior')
 
 if __name__ == '__main__':
     envolvente_inferior()
