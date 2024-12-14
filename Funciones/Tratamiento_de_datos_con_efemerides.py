@@ -1,6 +1,8 @@
+# Librerías
 import numpy as np
 
-def tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, ephemeris):
+def tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, ephemeris, perihelio):
+    
     # Creación del data frame ephemeris filtrada
     ephemeris_df = ephemeris.to_pandas()
     ephemeris_df.columns = ephemeris_df.columns.str.lower().str.replace(' ', '_')
@@ -19,6 +21,10 @@ def tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, ephemeris):
         - 5 * np.log10(curva_de_luz_procesada_df['delta'] * curva_de_luz_procesada_df['r'])
         - (beta * curva_de_luz_procesada_df['phase'])
         )
+    
+    # Calculo del Delta t
+    curva_de_luz_procesada_df['delta_t'] = (curva_de_luz_procesada_df.obs_date - perihelio) # type: ignore
+    curva_de_luz_procesada_df['delta_t'] = curva_de_luz_procesada_df.delta_t.apply(lambda delta_t: delta_t.days)
     
     return curva_de_luz_procesada_df
 

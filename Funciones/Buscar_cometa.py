@@ -2,13 +2,15 @@
 import pandas as pd
 
 # Funciones
+from Funciones.Verificar_conexion import verificar_conexion
 from Funciones.Conectar_con_API_de_COBS_Lista_de_Cometas import conectar_con_API_de_COBS_Lista_de_Cometas
 
-def buscar_cometa(cometa_buscado: str, conectado_a_internet: bool) -> None:
+def buscar_cometa(cometa_buscado: str) -> None:
     '''
     Busca el cometa ingresado ó, coincidencias aproximadas del mismo.
     '''
 
+    conectado_a_internet = verificar_conexion()
     cometas_hallados = []
     content = conectar_con_API_de_COBS_Lista_de_Cometas(conectado_a_internet)
 

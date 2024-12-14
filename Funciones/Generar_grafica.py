@@ -7,7 +7,7 @@ from Funciones.Curva_de_luz_externa import curva_de_luz_externa
 from Funciones.Curva_de_luz_externa_promediada import curva_de_luz_externa_promediada
 from Funciones.Curvas_de_luz_interna_externa import curvas_de_luz_interna_externa
 
-def generar_grafica(opcion_elegida: str,nombre_cometa: str, bases_de_datos: tuple[object]) -> None:
+def generar_grafica(opcion_elegida: str, nombre_cometa: str, bases_de_datos: tuple[object]) -> None:
     '''
     Genera la grafica especificada. Opciones a elegir:
     [1]: Curva de luz cruda,
