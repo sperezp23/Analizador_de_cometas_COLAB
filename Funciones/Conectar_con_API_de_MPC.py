@@ -1,3 +1,4 @@
+import pandas as pd
 from astroquery.mpc import MPC
 
 def conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa):
@@ -14,6 +15,7 @@ def conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa):
 
     ephemeris_filtrada_df = ephemeris_df[['date', 'delta','r', 'phase']].copy()
     ephemeris_filtrada_df = ephemeris_filtrada_df.rename(columns = {'date':'obs_date'})
+    ephemeris_filtrada_df['obs_date'] = pd.to_datetime(pd.to_datetime(ephemeris_filtrada_df.obs_date).dt.date)
 
     print('✅ Base de datos actualizada [MPC efemerides].')
     return ephemeris_filtrada_df
