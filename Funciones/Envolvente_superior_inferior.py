@@ -9,7 +9,7 @@ from Funciones.Tratamiento_de_datos_con_efemerides import tratamiento_de_datos_c
 from Funciones.Promedio_movil_maximo import promedio_movil_maximo
 from Funciones.Promedio_movil_minimo import promedio_movil_minimo
 
-def envolvente_superior_inferior(nombre_cometa: str)-> tuple[object]:
+def envolvente_superior_inferior(nombre_cometa: str, fecha_inicial: str)-> tuple[object]:
     '''
     Procesa los datos del cometa especificado para calcular la 
     envolvente inferior de la curva de luz del cometa especificado.
@@ -25,8 +25,11 @@ def envolvente_superior_inferior(nombre_cometa: str)-> tuple[object]:
     # Verificar cometa en la base de datos y conexión a internet
     if conectado_a_internet and verificar_cometa(nombre_cometa, conectado_a_internet):
 
+        # Entrada: Fecha inicial
+        # fecha_inicial = input('Ingrese la fecha inicial en el formato YYYY-MM-DD:')
+
         # Conexión con la API de COBS
-        content = conectar_con_API_de_COBS_Observaciones(nombre_cometa, conectado_a_internet)
+        content = conectar_con_API_de_COBS_Observaciones(nombre_cometa, fecha_inicial, conectado_a_internet)
 
         # Tratamiento de datos observacionales
         curva_de_luz_cruda_df = tratamiento_de_datos_cometa(content)
