@@ -1,4 +1,4 @@
-def promedio_movil_minimo(curva_de_luz_procesada_df, numero_elementos_grupo = 7):
+def promedio_movil_minimo(curva_de_luz_procesada_df, numero_elementos_grupo = 9):
     curva_de_luz_externa_df = curva_de_luz_procesada_df.groupby(by = 'obs_date').max()
     curva_de_luz_externa_df = curva_de_luz_externa_df.reset_index()
 
