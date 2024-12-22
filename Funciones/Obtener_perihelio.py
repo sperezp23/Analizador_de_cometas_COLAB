@@ -9,6 +9,7 @@ def obtener_perihelio(nombre_cometa, conectado_a_internet):
         Link_cops_API = f'https://cobs.si/api/comet.api?des={nombre_cometa}'
 
         if conectado_a_internet:
+            print(f'⌛ Conectando con la base de datos [COBS].')
             response = requests.get(Link_cops_API)
 
             if response.status_code == 200:
