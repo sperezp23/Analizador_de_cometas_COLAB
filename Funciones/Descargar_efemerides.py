@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
-def descargar_efemerides(object_name, start_date, num_days= 4001):
+def descargar_efemerides(object_name, curva_de_luz_cruda_df, num_days= 4001):
     # Variables
     interval = 1
     title = "Predefined title"
@@ -18,7 +18,7 @@ def descargar_efemerides(object_name, start_date, num_days= 4001):
     # Form fields needed:
     data = {
         'ty': 'e',  # Return ephemerides
-        'd': start_date,    # Start date of ephemerides
+        'd': str((curva_de_luz_cruda_df['obs_date'].min()).date()),    # Start date of ephemerides
         'l': num_days,  # Num days from start date
         'TextArea': object_name,    #Object name
         'i': interval,  # Sample interval
@@ -36,7 +36,7 @@ def descargar_efemerides(object_name, start_date, num_days= 4001):
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, "html.parser")
 
-        print('Success in submitting the ephemeris form')
+        print('⌛ Conectando con la base de datos [MPC efemerides].')
         
         data_element = soup.find('pre')
         successful_download = True
@@ -62,10 +62,10 @@ def descargar_efemerides(object_name, start_date, num_days= 4001):
                 year, month, day, delta, r, phase = parts[0], parts[1], parts[2], parts[8], parts[9], parts[11]
                 efemerides.append(['-'.join([year, month, day]), float(delta), float(r), float(phase)]) # type: ignore
                 
-        print('Ephemeris data stored successfully')
-        efemerides_df = pd.DataFrame(efemerides[1::], columns= efemerides[0]) # type: ignore
-        efemerides_df['obs_date'] = pd.to_datetime(efemerides_df.obs_date)
-        return efemerides_df
+        print('✅ Base de datos actualizada [MPC efemerides].')
+        efemerides_filtrada_df = pd.DataFrame(efemerides[1::], columns= efemerides[0]) # type: ignore
+        efemerides_filtrada_df['obs_date'] = pd.to_datetime(efemerides_filtrada_df.obs_date)
+        return efemerides_filtrada_df
     
 if __name__ == '__main__':
     descargar_efemerides()

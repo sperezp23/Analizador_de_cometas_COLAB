@@ -1,10 +1,10 @@
 # Librerías
 import numpy as np
 
-def tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, ephemeris_filtrada_df, perihelio):
+def tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, efemerides_filtrada_df, perihelio):
     
     # Unión de las bases de datos COBS y MPC
-    curva_de_luz_procesada_df = curva_de_luz_cruda_df.merge(ephemeris_filtrada_df, on='obs_date')
+    curva_de_luz_procesada_df = curva_de_luz_cruda_df.merge(efemerides_filtrada_df, on='obs_date')
 
     # Reducción de la magnitud aparente
     beta = 0
@@ -17,8 +17,7 @@ def tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, ephemeris_filtrad
     
     # Calculo del Delta t
     curva_de_luz_procesada_df['delta_t'] = (curva_de_luz_procesada_df.obs_date - perihelio) # type: ignore
-    curva_de_luz_procesada_df['delta_t'] = curva_de_luz_procesada_df.delta_t.apply(lambda delta_t: delta_t.days)
-    
+    curva_de_luz_procesada_df['delta_t'] = curva_de_luz_procesada_df.delta_t.dt.days
     return curva_de_luz_procesada_df
 
 if __name__ == '__main__':

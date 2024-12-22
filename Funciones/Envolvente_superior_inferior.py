@@ -25,10 +25,7 @@ def envolvente_superior_inferior(nombre_cometa: str, fecha_inicial: str)-> tuple
 
     # Verificar cometa en la base de datos y conexión a internet
     if conectado_a_internet and verificar_cometa(nombre_cometa, conectado_a_internet):
-
-        # Entrada: Fecha inicial
-        # fecha_inicial = input('Ingrese la fecha inicial en el formato YYYY-MM-DD:')
-
+        
         # Conexión con la API de COBS
         content = conectar_con_API_de_COBS_Observaciones(nombre_cometa, fecha_inicial, conectado_a_internet)
 
@@ -39,7 +36,7 @@ def envolvente_superior_inferior(nombre_cometa: str, fecha_inicial: str)-> tuple
         # ephemeris = conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa)
 
         # Descargar efemérides
-        efemerides = descargar_efemerides(nombre_cometa, fecha_inicial)
+        efemerides = descargar_efemerides(nombre_cometa, curva_de_luz_cruda_df)
 
         # Obtener perihelio de la API de COBS
         perihelio = obtener_perihelio(nombre_cometa, conectado_a_internet)
