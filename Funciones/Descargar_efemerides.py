@@ -2,11 +2,8 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
-def descargar_efemerides(object_name, curva_de_luz_cruda_df, num_days= 4001):
+def descargar_efemerides(nombre_cometa, curva_de_luz_cruda_df, numero_de_dias= 4001):
     # Variables
-    interval = 1
-    title = "Predefined title"
-    base_url = "Predefined base url"
     efemerides = [['obs_date', 'delta', 'r', 'phase']]
     url_ephem = "https://cgi.minorplanetcenter.net/cgi-bin/mpeph2.cgi"
     
@@ -19,12 +16,12 @@ def descargar_efemerides(object_name, curva_de_luz_cruda_df, num_days= 4001):
     data = {
         'ty': 'e',  # Return ephemerides
         'd': str((curva_de_luz_cruda_df['obs_date'].min()).date()),    # Start date of ephemerides
-        'l': num_days,  # Num days from start date
-        'TextArea': object_name,    #Object name
-        'i': interval,  # Sample interval
+        'l': numero_de_dias,  # Num days from start date
+        'TextArea': nombre_cometa,    #Object name
+        'i': 1,  # Sample interval
         'u': 'd',  # Sample interval measurements units = days
-        'tit' : title,  
-        'bu' : base_url,
+        'tit': 'Predefined title',  
+        'bu' : 'Predefined base url',
         #... add more if needed
     }
 

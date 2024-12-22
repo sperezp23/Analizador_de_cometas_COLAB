@@ -10,7 +10,7 @@ def conectar_con_API_de_COBS_Observaciones(nombre_cometa: str, fecha_inicial: st
         Link_cops_API_pagina_1 = f'https://cobs.si/api/obs_list.api?des={nombre_cometa}&format=json&from_date={fecha_inicial} 00:00&page=1&exclude_faint=False&exclude_not_accurate=False'
 
         if conectado_a_internet:
-            print(f'\n⌛ Conectando con la base de datos [COBS Observaciones].')
+            print(f'⌛ Conectando con la base de datos [COBS Observaciones].')
             response_pagina_1 = requests.get(Link_cops_API_pagina_1)
 
             if response_pagina_1.status_code == 200:
