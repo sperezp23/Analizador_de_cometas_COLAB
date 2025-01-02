@@ -33,10 +33,10 @@ def envolvente_superior_inferior(nombre_cometa: str, fecha_inicial: str)-> tuple
         curva_de_luz_cruda_df = tratamiento_de_datos_cometa(content)
 
         # Conexión con la API del MPC
-        # ephemeris = conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa)
+        efemerides = conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa)
 
         # Descargar efemérides
-        efemerides = descargar_efemerides(nombre_cometa, curva_de_luz_cruda_df)
+        # efemerides = descargar_efemerides(nombre_cometa, curva_de_luz_cruda_df)
 
         # Obtener perihelio de la API de COBS
         perihelio = obtener_perihelio(nombre_cometa, conectado_a_internet)
