@@ -2,10 +2,14 @@
 import plotly.express as px
 
 # Funciones
-from Funciones.Crear_carpetas import crear_carpetas
+# from Funciones.Crear_carpetas import crear_carpetas
 
 def curva_de_luz_reducida(nombre_cometa, curva_de_luz_procesada_df):
-    labels = {'obs_date':'Observation Date','magnitud_reducida':'Apparent total magnitude reduced', 'obs_method_key' : 'Observation Method'}
+    labels = {'obs_date':'Observation Date',
+              'magnitud_reducida':'Apparent total magnitude reduced',
+              'obs_method_key' : 'Observation Method'
+              }
+    
     titulo = f'Reduced lightcurve of {nombre_cometa}'
 
     # ruta_archivos_graficas = crear_carpetas(nombre_cometa, titulo)

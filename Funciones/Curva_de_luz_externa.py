@@ -2,10 +2,14 @@
 import plotly.express as px
 
 # Funciones
-from Funciones.Crear_carpetas import crear_carpetas
+# from Funciones.Crear_carpetas import crear_carpetas
 
 def curva_de_luz_externa(nombre_cometa, curva_de_luz_externa_df):
-    labels = {'obs_date':'Observation Date','promedio_movil':'Maximum averaged reduced magnitude', 'obs_method_key' : 'Observation Method'}
+    labels = {'obs_date':'Observation Date',
+              'promedio_movil':'Maximum averaged reduced magnitude',
+              'obs_method_key' : 'Observation Method'
+              }
+    
     titulo = f'External lightcurve of {nombre_cometa}'
 
     # ruta_archivos_graficas = crear_carpetas(nombre_cometa, titulo)

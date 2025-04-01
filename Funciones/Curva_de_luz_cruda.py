@@ -2,10 +2,14 @@
 import plotly.express as px
 
 # Funciones
-from Funciones.Crear_carpetas import crear_carpetas
+# from Funciones.Crear_carpetas import crear_carpetas
 
 def curva_de_luz_cruda(nombre_cometa,curva_de_luz_cruda_df):
-    labels = {'obs_date':'Observation Date','magnitude':'Apparent total magnitude crude', 'obs_method_key' : 'Observation Method'}
+    labels = {'obs_date':'Observation Date',
+              'magnitude':'Apparent total magnitude crude',
+              'obs_method_key' : 'Observation Method'
+              }
+    
     titulo = f'Crude lightcurve of {nombre_cometa}'
 
     # ruta_archivos_graficas = crear_carpetas(nombre_cometa, titulo)
