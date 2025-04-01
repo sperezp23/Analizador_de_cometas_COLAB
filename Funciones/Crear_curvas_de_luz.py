@@ -3,13 +3,6 @@ import plotly.express as px
 
 def crear_curvas_de_luz(variable,data_frame, titulo, labels):
 
-    # labels = {'obs_date':'Observation Date',
-    #           'magnitude':'Apparent total magnitude crude',
-    #           'obs_method_key' : 'Observation Method'
-    #           }
-    
-    # titulo = f'Crude lightcurve of {nombre_cometa}'
-
     fig = px.scatter(data_frame, x='obs_date', y= variable, color='obs_method_key', template= 'plotly_dark', labels= labels, title= titulo)
     fig.update_yaxes(autorange="reversed")
     fig.show()
