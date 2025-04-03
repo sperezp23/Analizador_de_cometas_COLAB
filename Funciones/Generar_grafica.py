@@ -1,10 +1,6 @@
 # Funciones
 from Funciones.Crear_curvas_de_luz import crear_curvas_de_luz
-# from Funciones.Curva_de_luz_cruda import curva_de_luz_cruda
-# from Funciones.Curva_de_luz_reducida import curva_de_luz_reducida
-# from Funciones.Curva_de_luz_interna import curva_de_luz_interna
 from Funciones.Curva_de_luz_interna_promediada import curva_de_luz_interna_promediada
-# from Funciones.Curva_de_luz_externa import curva_de_luz_externa
 from Funciones.Curva_de_luz_externa_promediada import curva_de_luz_externa_promediada
 from Funciones.Curvas_de_luz_interna_externa import curvas_de_luz_interna_externa
 

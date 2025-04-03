@@ -2,10 +2,14 @@
 import plotly.express as px
 
 # Funciones
-from Funciones.Crear_carpetas import crear_carpetas
+# from Funciones.Crear_carpetas import crear_carpetas
 
 def curva_de_luz_interna_promediada(nombre_cometa, curva_de_luz_externa_df):
-    labels = {'obs_date':'Observation Date','promedio_movil':'Averaged reduced magnitude'}
+    labels = {
+        'obs_date':'Observation Date',
+        'promedio_movil':'Averaged reduced magnitude'
+        }
+    
     titulo = f'Averaged reduced lightcurve of {nombre_cometa}'
 
     # ruta_archivos_graficas = crear_carpetas(nombre_cometa, titulo)
