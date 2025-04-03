@@ -22,7 +22,6 @@ def generar_grafica(opcion_elegida: str, nombre_cometa: str, bases_de_datos: tup
         titulo = f'Crude lightcurve of {nombre_cometa}'
 
         crear_curvas_de_luz(variable, bases_de_datos[0], titulo)
-        # curva_de_luz_cruda(nombre_cometa, bases_de_datos[0])
 
     elif opcion_elegida == '2':
 
@@ -30,7 +29,6 @@ def generar_grafica(opcion_elegida: str, nombre_cometa: str, bases_de_datos: tup
         titulo = f'Reduced lightcurve of {nombre_cometa}'
 
         crear_curvas_de_luz(variable, bases_de_datos[1], titulo)
-        # curva_de_luz_reducida(nombre_cometa, bases_de_datos[1])
 
     elif opcion_elegida == '3':
 
@@ -38,7 +36,6 @@ def generar_grafica(opcion_elegida: str, nombre_cometa: str, bases_de_datos: tup
         titulo = f'Maximized external lightcurve of {nombre_cometa}'
 
         crear_curvas_de_luz(variable, bases_de_datos[2], titulo)
-        # curva_de_luz_externa(nombre_cometa, bases_de_datos[2])
 
     elif opcion_elegida == '4':
         curva_de_luz_externa_promediada(nombre_cometa, bases_de_datos[2])
@@ -49,7 +46,6 @@ def generar_grafica(opcion_elegida: str, nombre_cometa: str, bases_de_datos: tup
         titulo = f'Minimized external lightcurve of {nombre_cometa}'
 
         crear_curvas_de_luz(variable, bases_de_datos[3], titulo)
-        # curva_de_luz_interna(nombre_cometa, bases_de_datos[3])
 
     elif opcion_elegida == '6':
 
