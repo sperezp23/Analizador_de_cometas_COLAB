@@ -50,6 +50,7 @@ def generar_grafica(opcion_elegida: str, nombre_cometa: str, bases_de_datos: tup
         crear_curvas_de_luz(variable_a_graficar , bases_de_datos[3], titulo)
 
     elif opcion_elegida == '6':
+        
         variable_a_graficar = {'promedio_movil':'Averaged reduced magnitude'}
         titulo = f'Averaged internal lightcurve of {nombre_cometa}'
 
