@@ -5,6 +5,7 @@ def tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, efemerides_filtra
     
     # Unión de las bases de datos COBS y MPC
     curva_de_luz_procesada_df = curva_de_luz_cruda_df.merge(efemerides_filtrada_df, on='obs_date')
+    curva_de_luz_procesada_df = curva_de_luz_procesada_df.drop('index', axis = 1)
 
     # Reducción de la magnitud aparente
     beta = 0
