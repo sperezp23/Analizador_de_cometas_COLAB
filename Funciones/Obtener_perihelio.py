@@ -16,6 +16,10 @@ def obtener_perihelio(nombre_cometa, conectado_a_internet):
                 perihelio = pd.to_datetime(response.json()['object']['perihelion_date'])
                 print('✅ Perihelio del cometa obtenido.')
                 return perihelio
+            
+            else:
+                print(f'🛑 El cometa: {nombre_cometa}, no se encuentra en la base de datos (COBS).')
+                return None
         
     except requests.ConnectionError:
         print(f'🛑 Se presentó un error al cargar la base de datos.\nError: {response.status_code}\n{response.content}')

@@ -5,7 +5,7 @@ import pandas as pd
 from Funciones.Verificar_conexion import verificar_conexion
 from Funciones.Conectar_con_API_de_COBS_Lista_de_Cometas import conectar_con_API_de_COBS_Lista_de_Cometas
 
-def buscar_cometa(cometa_buscado: str) -> None:
+def buscar_cometa(nombre_cometa: str) -> None:
     '''
     Busca el cometa ingresado ó, coincidencias aproximadas del mismo.
     '''
@@ -16,10 +16,10 @@ def buscar_cometa(cometa_buscado: str) -> None:
 
     cometas_df = pd.DataFrame(content['objects'])
     lista_cometas_df = cometas_df[['name', 'fullname']]
-    cometas_hallados =  lista_cometas_df.name[lista_cometas_df.fullname.str.contains(cometa_buscado)].values
+    cometas_hallados =  lista_cometas_df.name[lista_cometas_df.fullname.str.contains(nombre_cometa)].values
 
     if len(cometas_hallados) == 0:
-        print(f'🛑 No hay coincidencias para: {cometa_buscado}, en la base de datos (COBS).')
+        print(f'🛑 No hay coincidencias para: {nombre_cometa}, en la base de datos (COBS).')
     
     else:
         aux = '\n'*2

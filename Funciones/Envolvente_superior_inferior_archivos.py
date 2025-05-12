@@ -1,4 +1,7 @@
-# Módulos 
+# Módulos
+from pandas import to_datetime
+
+# Módulos locales 
 from Funciones.Verificar_conexion import verificar_conexion
 from Funciones.Conectar_con_API_de_MPC import conectar_con_API_de_MPC
 from Funciones.Obtener_perihelio import obtener_perihelio
@@ -6,7 +9,8 @@ from Funciones.Tratamiento_de_datos_con_efemerides import tratamiento_de_datos_c
 from Funciones.Promedio_movil_maximo import promedio_movil_maximo
 from Funciones.Promedio_movil_minimo import promedio_movil_minimo
 
-def envolvente_superior_inferior_archivos(nombre_cometa: str, curva_de_luz_cruda_df) -> tuple[object]:
+
+def envolvente_superior_inferior_archivos(nombre_cometa: str, curva_de_luz_cruda_df, perihelio = None) -> tuple[object]:
     '''
     Procesa los datos del cometa especificado para calcular la 
     envolvente inferior de la curva de luz del cometa especificado.
@@ -23,7 +27,11 @@ def envolvente_superior_inferior_archivos(nombre_cometa: str, curva_de_luz_cruda
         ephemeris = conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa)
 
         # Obtener perihelio de la API de COBS
-        perihelio = obtener_perihelio(nombre_cometa, verificar_conexion())
+        if type(perihelio) == None:
+            perihelio = obtener_perihelio(nombre_cometa, verificar_conexion())
+        
+        elif type(perihelio) == str:
+            perihelio = to_datetime(perihelio)
 
         # Tratamiento de datos con efemerides
         curva_de_luz_procesada_df = tratamiento_de_datos_con_efemerides(curva_de_luz_cruda_df, ephemeris, perihelio)
