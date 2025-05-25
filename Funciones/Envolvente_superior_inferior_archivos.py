@@ -3,7 +3,8 @@ from pandas import to_datetime
 
 # Módulos locales 
 from Funciones.Verificar_conexion import verificar_conexion
-from Funciones.Conectar_con_API_de_MPC import conectar_con_API_de_MPC
+# from Funciones.Conectar_con_API_de_MPC import conectar_con_API_de_MPC
+from Funciones.Descargar_efemerides import descargar_efemerides
 from Funciones.Obtener_perihelio import obtener_perihelio
 from Funciones.Tratamiento_de_datos_con_efemerides import tratamiento_de_datos_con_efemerides
 from Funciones.Promedio_movil_maximo import promedio_movil_maximo
@@ -24,7 +25,9 @@ def envolvente_superior_inferior_archivos(nombre_cometa: str, curva_de_luz_cruda
     if verificar_conexion():
 
         # Conexión con la API del MPC
-        ephemeris = conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa)
+        ephemeris = descargar_efemerides(nombre_cometa, curva_de_luz_cruda_df)
+    
+        # ephemeris = conectar_con_API_de_MPC(curva_de_luz_cruda_df, nombre_cometa)
 
         # Obtener perihelio de la API de COBS
         if type(perihelio) == None:
