@@ -12,6 +12,8 @@ def descargar_efemerides(nombre_cometa, curva_de_luz_cruda_df, numero_de_dias= 4
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
 
+    
+
     # Form fields needed:
     data = {
         'ty': 'e',  # Return ephemerides
